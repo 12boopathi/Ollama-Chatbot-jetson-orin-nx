@@ -1,0 +1,7 @@
+flask>=2.3.0
+requests>=2.31.0
+openai-whisper>=20231117
+werkzeug>=2.3.0
+numpy>=1.23.0
+soundfile>=0.12.1
+

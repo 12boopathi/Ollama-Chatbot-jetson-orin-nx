@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ollama Chatbot</title>
+  <script>
+    async function sendMessage() {
+      const model = document.getElementById("model").value;
+      const prompt = document.getElementById("prompt").value;
+
+      let response = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({model: model, prompt: prompt})
+      });
+      let data = await response.json();
+
+      let chatBox = document.getElementById("chat-box");
+      chatBox.innerHTML += "<b>You:</b> " + prompt + "<br>";
+      chatBox.innerHTML += "<b>Bot:</b> " + data.reply + "<br><br>";
+
+      document.getElementById("prompt").value = "";
+    }
+  </script>
+</head>
+<body>
+  <h1>Ollama Chatbot</h1>
+
+  <label for="model">Select Model:</label>
+  <select id="model">
+    {% for model in models %}
+      <option value="{{model}}">{{model}}</option>
+    {% endfor %}
+  </select>
+  <br><br>
+
+  <div id="chat-box" style="border:1px solid #ccc; width:500px; height:300px; overflow:auto; padding:10px;">
+  </div>
+  <br>
+
+  <input type="text" id="prompt" style="width:400px;">
+  <button onclick="sendMessage()">Send</button>
+</body>
+</html>
