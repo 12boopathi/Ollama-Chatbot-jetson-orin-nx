@@ -112,7 +112,8 @@ curl http://localhost:5000/health
 
 Here’s a demo video of the project in action:
 
-👉 **[Output Video](output.mp4)**
+👉 ![Output Demo](output.mp4)
+
 
 ---
 
