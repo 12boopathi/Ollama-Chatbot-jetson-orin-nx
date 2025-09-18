@@ -53,9 +53,11 @@ The goal is to provide a smooth **chatbot experience** powered entirely on-devic
 
 1. **Clone the repository**
 
+   ```bash
    git clone https://github.com/12boopathi/Ollama-Chatbot-jetson-orin-nx.git
-   cd Ollama-Chatbot-jetson-orin-nx
 
+   cd Ollama-Chatbot-jetson-orin-nx
+  ```
 
 2. **Create and activate Python 3.10 virtual environment**
 
